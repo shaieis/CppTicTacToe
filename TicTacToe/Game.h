@@ -7,7 +7,7 @@ class Game
 {
 public:
 	// Constructor
-	Game(int size);
+	Game();
 	// Destructor
 	~Game() { delete board; }
 
@@ -24,7 +24,10 @@ private:
 
 	// Member functions-------------------
 
-	// Ask your for number of players
+	// Ask for board size
+	void sizeOfBoard();
+
+	// Ask for number of players
 	void numOfPlayers();
 
 	// Ask who plays first (Only in single player mode) 

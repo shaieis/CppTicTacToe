@@ -2,7 +2,8 @@
 
 void main()
 {
-	Game game(3);
+
+	Game game;
 	game.start();
 
 }

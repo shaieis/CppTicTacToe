@@ -2,17 +2,16 @@
 # include <iostream>
 
 // Ctor ==============================================================================
-Game::Game(int size)
-{
-	m_size = size;
-	board = new Board(size);
-}
+Game::Game()
+{}
 
 // Public functions ==================================================================
 void Game::start() 
 {
+	
 	printLabel();
-
+	//Ask for board size
+	sizeOfBoard();
 	//Ask for number of players
 	numOfPlayers();
 }
@@ -47,6 +46,19 @@ void Game::draw() const
 }
 
 // Private functions =================================================================
+
+void Game::sizeOfBoard()
+{
+	int size;
+	do {
+		std::cout << "Please choose size of board between 3 and 9 ";
+		std::cin >> size;
+		std::cout << std::endl;
+	} while ((size < 3) || (size > 9));
+
+	m_size = size;
+	board = new Board(size);
+}
 void Game::numOfPlayers() 
 {
 
